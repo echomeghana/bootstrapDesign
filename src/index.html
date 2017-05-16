@@ -1,0 +1,174 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script type="text/javascript" href="http://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js"></script>
+    <link rel="stylesheet" type="text/css" href="../dist/css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="board">
+                <ul class="nav nav-tabs">
+                    <div class="liner"></div>
+                    <li rel-index="0" class="active">
+                        <a href="#step-1" class="btn" aria-controls="step-1" role="tab" data-toggle="tab">
+                            <span><i class="glyphicon glyphicon-user"></i></span>
+                        </a>
+                    </li>
+                    <li rel-index="1">
+                        <a href="#step-2" class="btn disabled" aria-controls="step-2" role="tab" data-toggle="tab">
+                            <span><i class="glyphicon glyphicon-pencil"></i></span>
+                        </a>
+                    </li>
+                    <li rel-index="2">
+                        <a href="#step-3" class="btn disabled" aria-controls="step-3" role="tab" data-toggle="tab">
+                            <span><i class="glyphicon glyphicon-plus"></i></span>
+                        </a>
+                    </li>
+                    <li rel-index="3">
+                        <a href="#step-4" class="btn disabled" aria-controls="step-4" role="tab" data-toggle="tab">
+                            <span><i class="glyphicon glyphicon-ok"></i></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="step-1">
+                    <div class="col-md-12">
+                        <h2>Float Label Pattern Forms</h2>
+                        <p class="lead">
+                            This new pattern transforms Bootstrap's form fields into modern, fun and user-friendly experiences!
+                            <br />
+                            <small class="text-muted">Learn more about this pattern at <a href="http://bradfrostweb.com/blog/post/float-label-pattern/" target="blank">http://bradfrostweb.com/blog/post/float-label-pattern/</a></small>
+                        </p>
+                        <div class="alert alert-warning">
+                            <h4>Missing SELECT Support</h4> This feature does not currently support SELECT tags - I'm still working out a way to make them work with Bootstrap's native examples.
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h4 class="page-header">Default Implementation</h4>
+                                <form role="form">
+                                    <div class="form-group float-label-control">
+                                        <label for="">Username</label>
+                                        <input type="email" class="form-control" placeholder="Username">
+                                    </div>
+                                    <div class="form-group float-label-control">
+                                        <label for="">Password</label>
+                                        <input type="password" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group float-label-control">
+                                        <label for="">Textarea</label>
+                                        <textarea class="form-control" placeholder="Textarea" rows="1"></textarea>
+                                    </div>
+                                </form>
+                                <h4 class="page-header">Bottom Labels</h4>
+                                <form role="form">
+                                    <div class="form-group float-label-control label-bottom">
+                                        <label for="">Username</label>
+                                        <input type="email" class="form-control" placeholder="Username">
+                                    </div>
+                                </form>
+                                <h4 class="page-header">Placeholder Overrides</h4>
+                                <form role="form">
+                                    <div class="form-group float-label-control">
+                                        <label for="">Email Address</label>
+                                        <input type="email" class="form-control" placeholder="What's your email address?">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">
+                            Features
+                        </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li>Very customizable</li>
+                                            <li>Works with Bootstrap's native form examples</li>
+                                            <li>Uses CSS transitions for fallback browser support</li>
+                                            <li>Placeholder override for labels when fields are empty</li>
+                                            <li>Included authored jQuery plugin</li>
+                                            <li>Optional bottom label positioning with the <code>.label-bottom</code> utility</li>
+                                            <li>Works great with Chrome's AutoComplete</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="step-1-next" class="btn btn-lg btn-primary center-block">Next</button>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="step-2">
+                    <div class="col-md-12">
+                        <button id="step-2-next" class="btn btn-lg btn-primary pull-right">Next</button>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="step-3">
+                    <div class="col-md-12">
+                        <button id="step-3-next" class="btn btn-lg btn-primary pull-right">Next</button>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="step-4">
+                    <div class="col-md-12">
+                        <button id="step-4-next" class="btn btn-lg btn-primary pull-right">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include SmartWizard JavaScript source -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.nav-tabs > li > a').click(function() {
+            if ($(this).hasClass('disabled')) {
+                return false;
+            } else {
+                var linkIndex = $(this).parent().index() - 1;
+                $('.nav-tabs > li').each(function(index, item) {
+                    $(item).attr('rel-index', index - linkIndex);
+                });
+            }
+        });
+
+        $('#step-1-next').click(function() {
+            // Check values here
+            var isValid = true;
+            if (isValid) {
+                $('.nav-tabs > li:nth-of-type(2) > a').removeClass('disabled').click();
+            }
+        });
+        $('#step-2-next').click(function() {
+            // Check values here
+            var isValid = true;
+            alert("here")
+            if (isValid) {
+                $('.nav-tabs > li:nth-of-type(3) > a').removeClass('disabled').click();
+            }
+        });
+        $('#step-3-next').click(function() {
+            // Check values here
+            var isValid = true;
+
+            if (isValid) {
+                $('.nav-tabs > li:nth-of-type(4) > a').removeClass('disabled').click();
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>
